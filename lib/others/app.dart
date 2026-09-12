@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:physio_ghar_demo/features/home/views/screen/home_screen.dart';
+import 'package:physio_ghar_demo/features/shared/utils/app_theme.dart';
 
 class PhysioGharApp extends ConsumerStatefulWidget {
   const PhysioGharApp({super.key});
@@ -23,6 +24,7 @@ class _PhysioGharAppState extends ConsumerState<PhysioGharApp> {
         return MaterialApp(
           title: "PhysioGhar App",
           debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
           home: HomeScreen(),
         );
       },
