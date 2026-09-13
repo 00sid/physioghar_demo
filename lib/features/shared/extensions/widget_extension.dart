@@ -41,6 +41,8 @@ extension WidgetExt on Widget {
     padding: EdgeInsets.only(bottom: val.spMin),
     child: this,
   );
+  Widget pad(double val) =>
+      Padding(padding: EdgeInsets.all(val.spMin), child: this);
 
   Widget toSizedBox({final double? width, final double? height}) => SizedBox(
     key: key,

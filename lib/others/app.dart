@@ -36,6 +36,6 @@ Size getDesignSize() {
   if (Platform.isIOS) {
     return const Size(375, 812);
   } else {
-    return const Size(360, 690);
+    return const Size(390, 844);
   }
 }

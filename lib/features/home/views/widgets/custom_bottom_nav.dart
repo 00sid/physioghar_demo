@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:physio_ghar_demo/features/home/enum/home_nav_enum.dart';
 import 'package:physio_ghar_demo/features/home/providers/selected_nav_provider.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/utils/app_colors.dart';
 
@@ -109,7 +110,7 @@ class _CustomBottomNavState extends ConsumerState<CustomBottomNav> {
 
                 // Show title only for selected item
                 if (isSelected) ...[
-                  SizedBox(width: 6.spMin),
+                  6.wSizedBox,
 
                   Text(
                     value.title,

@@ -27,62 +27,62 @@ class AppTheme {
     //   'Patients',
     //   style: Theme.of(context).textTheme.headlineLarge,
     // )
-    textTheme: TextTheme(
-      displayLarge: GoogleFonts.fraunces(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w700,
-      ),
+    // textTheme: TextTheme(
+    //   displayLarge: GoogleFonts.fraunces(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w700,
+    //   ),
 
-      displayMedium: GoogleFonts.fraunces(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w700,
-      ),
+    //   displayMedium: GoogleFonts.fraunces(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w700,
+    //   ),
 
-      headlineLarge: GoogleFonts.fraunces(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w700,
-      ),
+    //   headlineLarge: GoogleFonts.fraunces(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w700,
+    //   ),
 
-      headlineMedium: GoogleFonts.fraunces(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w700,
-      ),
+    //   headlineMedium: GoogleFonts.fraunces(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w700,
+    //   ),
 
-      titleLarge: GoogleFonts.fraunces(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w700,
-      ),
+    //   titleLarge: GoogleFonts.fraunces(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w700,
+    //   ),
 
-      titleMedium: GoogleFonts.inter(
-        color: AppColors.primaryText,
-        fontWeight: FontWeight.w600,
-      ),
+    //   titleMedium: GoogleFonts.inter(
+    //     color: AppColors.primaryText,
+    //     fontWeight: FontWeight.w600,
+    //   ),
 
-      bodyLarge: GoogleFonts.inter(
-        color: AppColors.primaryText,
-        fontSize: 16.spMin,
-      ),
+    //   bodyLarge: GoogleFonts.inter(
+    //     color: AppColors.primaryText,
+    //     fontSize: 16.spMin,
+    //   ),
 
-      bodyMedium: GoogleFonts.inter(
-        color: AppColors.secondaryText,
-        fontSize: 14.spMin,
-      ),
+    //   bodyMedium: GoogleFonts.inter(
+    //     color: AppColors.secondaryText,
+    //     fontSize: 14.spMin,
+    //   ),
 
-      bodySmall: GoogleFonts.inter(
-        color: AppColors.mutedText,
-        fontSize: 12.spMin,
-      ),
+    //   bodySmall: GoogleFonts.inter(
+    //     color: AppColors.mutedText,
+    //     fontSize: 12.spMin,
+    //   ),
 
-      labelLarge: GoogleFonts.inter(
-        color: Colors.white,
-        fontWeight: FontWeight.w600,
-      ),
+    //   labelLarge: GoogleFonts.inter(
+    //     color: Colors.white,
+    //     fontWeight: FontWeight.w600,
+    //   ),
 
-      labelMedium: GoogleFonts.inter(
-        color: AppColors.secondaryText,
-        fontWeight: FontWeight.w600,
-      ),
-    ),
+    //   labelMedium: GoogleFonts.inter(
+    //     color: AppColors.secondaryText,
+    //     fontWeight: FontWeight.w600,
+    //   ),
+    // ),
 
     // --------------------------------
     // AppBar

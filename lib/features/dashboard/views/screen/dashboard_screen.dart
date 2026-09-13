@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_available.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_header.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_quick.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_schedule.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_summary.dart';
+import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_upcoming.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/utils/app_colors.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
@@ -15,7 +24,25 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mainBg,
-      body: Center(child: Text("Dashboard Screen")),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DashboardHeader(),
+            24.hSizedBox,
+            DashboardAvailable(),
+            24.hSizedBox,
+            DashboardSummary(),
+            24.hSizedBox,
+            DashboardSchedule(),
+            24.hSizedBox,
+            DashboardUpcoming(),
+            24.hSizedBox,
+            DashboardQuick(),
+            60.hSizedBox,
+          ],
+        ),
+      ).pX(20.spMin).pY(16.spMin),
     );
   }
 }
