@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:physio_ghar_demo/features/account/providers/complain/complain_category_provider.dart';
 import 'package:physio_ghar_demo/features/account/providers/complain/complain_list_provider.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/context_extension.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/context_navigation_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/model/complain/complain_model.dart';
@@ -269,7 +270,7 @@ class _ComplainFormState extends ConsumerState<ComplainForm> {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      context.popPage();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primaryCTA,
