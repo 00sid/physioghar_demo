@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/date_time_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/model/session/session_model.dart';
@@ -38,7 +39,7 @@ class _UpcomingCardState extends ConsumerState<UpcomingCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  widget.upcoming.date!,
+                  widget.upcoming.sessionDate!.shortDayName,
                   style: GoogleFonts.ibmPlexMono(
                     fontSize: 9.spMin,
                     fontWeight: FontWeight.w500,
@@ -50,7 +51,7 @@ class _UpcomingCardState extends ConsumerState<UpcomingCard> {
                 2.hSizedBox,
 
                 Text(
-                  widget.upcoming.day!,
+                  widget.upcoming.sessionDate!.formattedDay,
                   style: GoogleFonts.fraunces(
                     fontSize: 21.spMin,
                     fontWeight: FontWeight.w600,
@@ -91,7 +92,7 @@ class _UpcomingCardState extends ConsumerState<UpcomingCard> {
                 Row(
                   children: [
                     Text(
-                      widget.upcoming.time!,
+                      widget.upcoming.sessionDate!.formattedTime,
                       style: GoogleFonts.inter(
                         fontSize: 10.spMin,
                         fontWeight: FontWeight.w600,

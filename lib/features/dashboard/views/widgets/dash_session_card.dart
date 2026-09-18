@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:physio_ghar_demo/features/schedule_and_session_mgmt/enum/session_status.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/model/session/session_model.dart';
 import 'package:physio_ghar_demo/features/shared/utils/app_colors.dart';
 
-class SessionCard extends ConsumerStatefulWidget {
+class DashSessionCard extends ConsumerStatefulWidget {
   final SessionModel session;
-  const SessionCard({super.key, required this.session});
+  const DashSessionCard({super.key, required this.session});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SessionCardState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _DashSessionCardState();
 }
 
-class _SessionCardState extends ConsumerState<SessionCard> {
+class _DashSessionCardState extends ConsumerState<DashSessionCard> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -40,9 +43,10 @@ class _SessionCardState extends ConsumerState<SessionCard> {
                   SizedBox(
                     width: 70.spMin,
                     child: Text(
-                      widget.session.time!,
+                      DateFormat('HH:mm').format(widget.session.sessionDate!),
+
                       style: GoogleFonts.inter(
-                        fontSize: 13.spMin,
+                        fontSize: 12.spMin,
                         fontWeight: FontWeight.w700,
                         color: AppColors.primary,
                       ),
@@ -109,7 +113,7 @@ class _SessionCardState extends ConsumerState<SessionCard> {
 
                   8.wSizedBox,
 
-                  _statusPill(widget.session.status!),
+                  _statusPill(widget.session.sessionStatus!),
                 ],
               ),
 
@@ -147,14 +151,14 @@ class _SessionCardState extends ConsumerState<SessionCard> {
     );
   }
 
-  Widget _statusPill(String status) {
+  Widget _statusPill(SessionStatusEnum status) {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.pendingState,
         borderRadius: BorderRadius.circular(50.spMin),
       ),
       child: Text(
-        status,
+        status.title,
         style: GoogleFonts.inter(
           fontSize: 9.5.spMin,
           fontWeight: FontWeight.w600,

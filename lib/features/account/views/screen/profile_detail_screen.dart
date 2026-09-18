@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:physio_ghar_demo/features/shared/extensions/context_navigation_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
 import 'package:physio_ghar_demo/features/shared/model/user/user_model.dart';
@@ -21,7 +22,7 @@ class ProfileDetailsScreen extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => context.popPage(),
                   child: Container(
                     width: 44.spMin,
                     height: 44.spMin,

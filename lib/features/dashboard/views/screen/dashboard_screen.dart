@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_available.dart';
 import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_header.dart';
 import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_quick.dart';
@@ -9,7 +8,6 @@ import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_summ
 import 'package:physio_ghar_demo/features/dashboard/views/widgets/dashboard_upcoming.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/number_extension.dart';
 import 'package:physio_ghar_demo/features/shared/extensions/widget_extension.dart';
-import 'package:physio_ghar_demo/features/shared/utils/app_colors.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
   const DashboardScreen({super.key});
@@ -23,7 +21,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainBg,
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -42,7 +39,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             60.hSizedBox,
           ],
         ),
-      ).pX(20.spMin).pY(16.spMin),
+      ).pXY(20, 16),
     );
   }
 }

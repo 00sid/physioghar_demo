@@ -90,7 +90,7 @@ class _AccountLogoutState extends ConsumerState<AccountLogout> {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => context.popPage(),
               child: Text(
                 selectedLanguage == 'English' ? 'Cancel' : 'रद्द गर्नुहोस्',
                 style: GoogleFonts.inter(color: AppColors.secondaryText),

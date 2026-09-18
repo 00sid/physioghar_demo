@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SessionModel {
 
- String? get patient; String? get status; String? get time; String? get day; String? get date; String? get treatment; SessionLocationEnum? get location;
+ String? get sessionId; String? get patient; String? get patientId; String? get status; String? get time; String? get day; String? get date; String? get treatment; DateTime? get sessionDate; SessionStatusEnum? get sessionStatus; SessionLocationEnum? get location;
 /// Create a copy of SessionModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $SessionModelCopyWith<SessionModel> get copyWith => _$SessionModelCopyWithImpl<S
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionModel&&(identical(other.patient, patient) || other.patient == patient)&&(identical(other.status, status) || other.status == status)&&(identical(other.time, time) || other.time == time)&&(identical(other.day, day) || other.day == day)&&(identical(other.date, date) || other.date == date)&&(identical(other.treatment, treatment) || other.treatment == treatment)&&(identical(other.location, location) || other.location == location));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionModel&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.patient, patient) || other.patient == patient)&&(identical(other.patientId, patientId) || other.patientId == patientId)&&(identical(other.status, status) || other.status == status)&&(identical(other.time, time) || other.time == time)&&(identical(other.day, day) || other.day == day)&&(identical(other.date, date) || other.date == date)&&(identical(other.treatment, treatment) || other.treatment == treatment)&&(identical(other.sessionDate, sessionDate) || other.sessionDate == sessionDate)&&(identical(other.sessionStatus, sessionStatus) || other.sessionStatus == sessionStatus)&&(identical(other.location, location) || other.location == location));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,patient,status,time,day,date,treatment,location);
+int get hashCode => Object.hash(runtimeType,sessionId,patient,patientId,status,time,day,date,treatment,sessionDate,sessionStatus,location);
 
 @override
 String toString() {
-  return 'SessionModel(patient: $patient, status: $status, time: $time, day: $day, date: $date, treatment: $treatment, location: $location)';
+  return 'SessionModel(sessionId: $sessionId, patient: $patient, patientId: $patientId, status: $status, time: $time, day: $day, date: $date, treatment: $treatment, sessionDate: $sessionDate, sessionStatus: $sessionStatus, location: $location)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $SessionModelCopyWith<$Res>  {
   factory $SessionModelCopyWith(SessionModel value, $Res Function(SessionModel) _then) = _$SessionModelCopyWithImpl;
 @useResult
 $Res call({
- String? patient, String? status, String? time, String? day, String? date, String? treatment, SessionLocationEnum? location
+ String? sessionId, String? patient, String? patientId, String? status, String? time, String? day, String? date, String? treatment, DateTime? sessionDate, SessionStatusEnum? sessionStatus, SessionLocationEnum? location
 });
 
 
@@ -62,15 +62,19 @@ class _$SessionModelCopyWithImpl<$Res>
 
 /// Create a copy of SessionModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? patient = freezed,Object? status = freezed,Object? time = freezed,Object? day = freezed,Object? date = freezed,Object? treatment = freezed,Object? location = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? sessionId = freezed,Object? patient = freezed,Object? patientId = freezed,Object? status = freezed,Object? time = freezed,Object? day = freezed,Object? date = freezed,Object? treatment = freezed,Object? sessionDate = freezed,Object? sessionStatus = freezed,Object? location = freezed,}) {
   return _then(_self.copyWith(
-patient: freezed == patient ? _self.patient : patient // ignore: cast_nullable_to_non_nullable
+sessionId: freezed == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
+as String?,patient: freezed == patient ? _self.patient : patient // ignore: cast_nullable_to_non_nullable
+as String?,patientId: freezed == patientId ? _self.patientId : patientId // ignore: cast_nullable_to_non_nullable
 as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,time: freezed == time ? _self.time : time // ignore: cast_nullable_to_non_nullable
 as String?,day: freezed == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
 as String?,date: freezed == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
 as String?,treatment: freezed == treatment ? _self.treatment : treatment // ignore: cast_nullable_to_non_nullable
-as String?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String?,sessionDate: freezed == sessionDate ? _self.sessionDate : sessionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,sessionStatus: freezed == sessionStatus ? _self.sessionStatus : sessionStatus // ignore: cast_nullable_to_non_nullable
+as SessionStatusEnum?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
 as SessionLocationEnum?,
   ));
 }
@@ -156,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? patient,  String? status,  String? time,  String? day,  String? date,  String? treatment,  SessionLocationEnum? location)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? sessionId,  String? patient,  String? patientId,  String? status,  String? time,  String? day,  String? date,  String? treatment,  DateTime? sessionDate,  SessionStatusEnum? sessionStatus,  SessionLocationEnum? location)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SessionModel() when $default != null:
-return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.location);case _:
+return $default(_that.sessionId,_that.patient,_that.patientId,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.sessionDate,_that.sessionStatus,_that.location);case _:
   return orElse();
 
 }
@@ -177,10 +181,10 @@ return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? patient,  String? status,  String? time,  String? day,  String? date,  String? treatment,  SessionLocationEnum? location)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? sessionId,  String? patient,  String? patientId,  String? status,  String? time,  String? day,  String? date,  String? treatment,  DateTime? sessionDate,  SessionStatusEnum? sessionStatus,  SessionLocationEnum? location)  $default,) {final _that = this;
 switch (_that) {
 case _SessionModel():
-return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.location);case _:
+return $default(_that.sessionId,_that.patient,_that.patientId,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.sessionDate,_that.sessionStatus,_that.location);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +201,10 @@ return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? patient,  String? status,  String? time,  String? day,  String? date,  String? treatment,  SessionLocationEnum? location)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? sessionId,  String? patient,  String? patientId,  String? status,  String? time,  String? day,  String? date,  String? treatment,  DateTime? sessionDate,  SessionStatusEnum? sessionStatus,  SessionLocationEnum? location)?  $default,) {final _that = this;
 switch (_that) {
 case _SessionModel() when $default != null:
-return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.location);case _:
+return $default(_that.sessionId,_that.patient,_that.patientId,_that.status,_that.time,_that.day,_that.date,_that.treatment,_that.sessionDate,_that.sessionStatus,_that.location);case _:
   return null;
 
 }
@@ -212,15 +216,19 @@ return $default(_that.patient,_that.status,_that.time,_that.day,_that.date,_that
 
 
 class _SessionModel implements SessionModel {
-   _SessionModel({this.patient, this.status, this.time, this.day, this.date, this.treatment, this.location});
+   _SessionModel({this.sessionId, this.patient, this.patientId, this.status, this.time, this.day, this.date, this.treatment, this.sessionDate, this.sessionStatus, this.location});
   
 
+@override final  String? sessionId;
 @override final  String? patient;
+@override final  String? patientId;
 @override final  String? status;
 @override final  String? time;
 @override final  String? day;
 @override final  String? date;
 @override final  String? treatment;
+@override final  DateTime? sessionDate;
+@override final  SessionStatusEnum? sessionStatus;
 @override final  SessionLocationEnum? location;
 
 /// Create a copy of SessionModel
@@ -233,16 +241,16 @@ _$SessionModelCopyWith<_SessionModel> get copyWith => __$SessionModelCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionModel&&(identical(other.patient, patient) || other.patient == patient)&&(identical(other.status, status) || other.status == status)&&(identical(other.time, time) || other.time == time)&&(identical(other.day, day) || other.day == day)&&(identical(other.date, date) || other.date == date)&&(identical(other.treatment, treatment) || other.treatment == treatment)&&(identical(other.location, location) || other.location == location));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionModel&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.patient, patient) || other.patient == patient)&&(identical(other.patientId, patientId) || other.patientId == patientId)&&(identical(other.status, status) || other.status == status)&&(identical(other.time, time) || other.time == time)&&(identical(other.day, day) || other.day == day)&&(identical(other.date, date) || other.date == date)&&(identical(other.treatment, treatment) || other.treatment == treatment)&&(identical(other.sessionDate, sessionDate) || other.sessionDate == sessionDate)&&(identical(other.sessionStatus, sessionStatus) || other.sessionStatus == sessionStatus)&&(identical(other.location, location) || other.location == location));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,patient,status,time,day,date,treatment,location);
+int get hashCode => Object.hash(runtimeType,sessionId,patient,patientId,status,time,day,date,treatment,sessionDate,sessionStatus,location);
 
 @override
 String toString() {
-  return 'SessionModel(patient: $patient, status: $status, time: $time, day: $day, date: $date, treatment: $treatment, location: $location)';
+  return 'SessionModel(sessionId: $sessionId, patient: $patient, patientId: $patientId, status: $status, time: $time, day: $day, date: $date, treatment: $treatment, sessionDate: $sessionDate, sessionStatus: $sessionStatus, location: $location)';
 }
 
 
@@ -253,7 +261,7 @@ abstract mixin class _$SessionModelCopyWith<$Res> implements $SessionModelCopyWi
   factory _$SessionModelCopyWith(_SessionModel value, $Res Function(_SessionModel) _then) = __$SessionModelCopyWithImpl;
 @override @useResult
 $Res call({
- String? patient, String? status, String? time, String? day, String? date, String? treatment, SessionLocationEnum? location
+ String? sessionId, String? patient, String? patientId, String? status, String? time, String? day, String? date, String? treatment, DateTime? sessionDate, SessionStatusEnum? sessionStatus, SessionLocationEnum? location
 });
 
 
@@ -270,15 +278,19 @@ class __$SessionModelCopyWithImpl<$Res>
 
 /// Create a copy of SessionModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? patient = freezed,Object? status = freezed,Object? time = freezed,Object? day = freezed,Object? date = freezed,Object? treatment = freezed,Object? location = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? sessionId = freezed,Object? patient = freezed,Object? patientId = freezed,Object? status = freezed,Object? time = freezed,Object? day = freezed,Object? date = freezed,Object? treatment = freezed,Object? sessionDate = freezed,Object? sessionStatus = freezed,Object? location = freezed,}) {
   return _then(_SessionModel(
-patient: freezed == patient ? _self.patient : patient // ignore: cast_nullable_to_non_nullable
+sessionId: freezed == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
+as String?,patient: freezed == patient ? _self.patient : patient // ignore: cast_nullable_to_non_nullable
+as String?,patientId: freezed == patientId ? _self.patientId : patientId // ignore: cast_nullable_to_non_nullable
 as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,time: freezed == time ? _self.time : time // ignore: cast_nullable_to_non_nullable
 as String?,day: freezed == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
 as String?,date: freezed == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
 as String?,treatment: freezed == treatment ? _self.treatment : treatment // ignore: cast_nullable_to_non_nullable
-as String?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String?,sessionDate: freezed == sessionDate ? _self.sessionDate : sessionDate // ignore: cast_nullable_to_non_nullable
+as DateTime?,sessionStatus: freezed == sessionStatus ? _self.sessionStatus : sessionStatus // ignore: cast_nullable_to_non_nullable
+as SessionStatusEnum?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
 as SessionLocationEnum?,
   ));
 }
