@@ -22,7 +22,7 @@ class _PhysioGharAppState extends ConsumerState<PhysioGharApp> {
       splitScreenMode: true,
       builder: (_, child) {
         return MaterialApp(
-          title: "PhysioGhar App",
+          title: "PhysioGhar Therapist App",
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
           home: HomeScreen(),
